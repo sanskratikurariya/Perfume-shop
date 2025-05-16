@@ -17,7 +17,7 @@ const ProductDetail = () => {
   const [touchStartX, setTouchStartX] = useState(null);
 
   useEffect(() => {
-    // Fetch product details using the fetchProductById helper
+ 
     fetchProductById(id)
       .then((productData) => {
         setProduct({
@@ -31,7 +31,7 @@ const ProductDetail = () => {
         console.error('Error fetching product:', err);
       });
 
-    // Fetch reviews using the fetchReviewsByProductId helper
+
     fetchReviewsByProductId(id)
       .then((reviewData) => {
         setReviews(reviewData || []);
@@ -40,7 +40,7 @@ const ProductDetail = () => {
         console.error('Error fetching reviews:', err);
       });
 
-    // Set share URL once on mount
+
     setShareUrl(window.location.href);
   }, [id]);
 
@@ -48,9 +48,9 @@ const ProductDetail = () => {
     if (!comment.trim()) return;
 
     const reviewData = {
-      username: 'User', // Replace with real user info if available
+      username: 'User', 
       comment,
-      rating: 5, // You can extend to allow dynamic rating input
+      rating: 5,
     };
 
     postReview(id, reviewData)

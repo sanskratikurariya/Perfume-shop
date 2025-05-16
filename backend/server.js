@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 });
 
 
-// API Routes
+
 app.use('/api/products', require('./routes/products'));
 app.use('/api/reviews', require('./routes/reviews'));
 
